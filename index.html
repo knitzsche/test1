@@ -13,7 +13,7 @@
 $( document ).ready(function() {
   console.log( "document loaded" );
   start();
-
+/*
   document.addEventListener('DOMContentLoaded', async () => {
     let devices = await navigator.usb.getDevices();
       devices.forEach(device => {
@@ -28,7 +28,7 @@ $( document ).ready(function() {
   navigator.usb.addEventListener('disconnect', event => {
     // Remove |event.device| from the UI.
   });
-  let button = document.getElementById('request-device');
+  let button = document.getElementById('but');
     button.addEventListener('click', async () => {
     let device;
     try {
@@ -45,33 +45,39 @@ $( document ).ready(function() {
       // Add |device| to the UI.
     }
   });
+*/
+
 });
 
 function start() {
   var d = document.getElementById('webusb');
-  var h = "<p>yo!<\p>"; 
+  var h = "<p>yoyo!<\p>"; 
   d.innerHTML = h;
 }
 
+
+
 function doit(){
 
-  console.log( "do clicked");
-  button.addEventListener('click', async () => {
-  let device;
-  try {
-    device = await navigator.usb.requestDevice({ filters: [{
-        vendorId: 0x2760,
-        classCode: 0x14, // vendor-specific
-        protocolCode: 0x01
-    }]});
-  } catch () {
-    console.log("in doit(). no device found");
-  }
+  console.log( "doiit clicked");
+  let button = document.getElementById('but');
+
+  but.addEventListener('click', async () => {
+    let device;
+    try {
+      device = await navigator.usb.requestDevice({ filters: [{
+          vendorId: 0x046d
+          //classCode: 0x01, // vendor-specific
+          //protocolCode: 0x01
+      }]});
+    } catch{
+      console.log("in doit(). no device found");
+    }
     
-  if (device !== undefined) {
-    console.log("device found!");
-  }
-});
+   if (device !== undefined) {
+      console.log("device found!");
+    }
+  });
 
 
   var devices;
@@ -87,7 +93,7 @@ function doit(){
 </script>
 <body>
 
-<button onclick="doit()">Do It</button>
+<button id="but" onclick="doit()">Do It</button>
 
  
 <div id="webusb"/>
