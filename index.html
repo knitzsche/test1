@@ -21,6 +21,30 @@ $( document ).ready(function() {
       // Add |device| to the UI.
     });
   });
+  navigator.usb.addEventListener('connect', event => {
+    // Add |event.device| to the UI.
+  });
+
+  navigator.usb.addEventListener('disconnect', event => {
+    // Remove |event.device| from the UI.
+  });
+  let button = document.getElementById('request-device');
+    button.addEventListener('click', async () => {
+    let device;
+    try {
+      device = await navigator.usb.requestDevice({ filters: [{
+        vendorId: 0x2760,
+        classCode: 0x14, // vendor-specific
+        protocolCode: 0x01
+      }]});
+    } catch (err) {
+      // No device was selected.
+    }
+
+    if (device !== undefined) {
+      // Add |device| to the UI.
+    }
+  });
 });
 
 function start() {
