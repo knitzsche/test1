@@ -56,7 +56,7 @@ function start() {
 function doit(){
 
   console.log( "do clicked");
-
+  button.addEventListener('click', async () => {
   let device;
   try {
     device = await navigator.usb.requestDevice({ filters: [{
