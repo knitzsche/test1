@@ -14,13 +14,13 @@ $( document ).ready(function() {
   console.log( "document loaded" );
   start();
 
-  //document.addEventListener('DOMContentLoaded', async () => {
-  //let devices = await navigator.usb.getDevices();
-    //devices.forEach(device => {
-    //console.log("a usb device");
-    // Add |device| to the UI.
-  //);
-//});
+  document.addEventListener('DOMContentLoaded', async () => {
+    let devices = await navigator.usb.getDevices();
+      devices.forEach(device => {
+      console.log("a usb device");
+      // Add |device| to the UI.
+    });
+  });
 });
 
 function start() {
