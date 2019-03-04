@@ -56,6 +56,24 @@ function start() {
 function doit(){
 
   console.log( "do clicked");
+
+  let device;
+  try {
+    device = await navigator.usb.requestDevice({ filters: [{
+        vendorId: 0x2760,
+        classCode: 0x14, // vendor-specific
+        protocolCode: 0x01
+    }]});
+  } catch () {
+    console.log("in doit(). no device found");
+  }
+    
+  if (device !== undefined) {
+    console.log("device found!");
+  }
+});
+
+
   var devices;
   devices = navigator.usb.getDevices();
   console.log("length devices", devices.length);
