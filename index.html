@@ -13,40 +13,6 @@
 $( document ).ready(function() {
   console.log( "document loaded" );
   start();
-/*
-  document.addEventListener('DOMContentLoaded', async () => {
-    let devices = await navigator.usb.getDevices();
-      devices.forEach(device => {
-      console.log("a usb device");
-      // Add |device| to the UI.
-    });
-  });
-  navigator.usb.addEventListener('connect', event => {
-    // Add |event.device| to the UI.
-  });
-
-  navigator.usb.addEventListener('disconnect', event => {
-    // Remove |event.device| from the UI.
-  });
-  let button = document.getElementById('but');
-    button.addEventListener('click', async () => {
-    let device;
-    try {
-      device = await navigator.usb.requestDevice({ filters: [{
-        vendorId: 0x2760,
-        classCode: 0x14, // vendor-specific
-        protocolCode: 0x01
-      }]});
-    } catch (err) {
-      // No device was selected.
-    }
-
-    if (device !== undefined) {
-      // Add |device| to the UI.
-    }
-  });
-*/
-
 });
 
 function start() {
@@ -91,8 +57,42 @@ function doit(){
     //console.log("a usb device");
     console.log("device");
   //});
-// my microscope cam: [16:23:27] USB device added: path=/dev/bus/usb/002/027 vendor=2760 "Vimicro Corp.", product=58113 "3.0M USB2.0 Camera", serial="MI1320_SOC", guid=0c2c8eb3-1fe3-493b-9e02-34e86bc88485
+  // my microscope cam: [16:23:27] USB device added: path=/dev/bus/usb/002/027 vendor=2760 "Vimicro Corp.", product=58113 "3.0M USB2.0 Camera", serial="MI1320_SOC", guid=0c2c8eb3-1fe3-493b-9e02-34e86bc88485
+/*
+  document.addEventListener('DOMContentLoaded', async () => {
+    let devices = await navigator.usb.getDevices();
+      devices.forEach(device => {
+      console.log("a usb device");
+      // Add |device| to the UI.
+    });
+  });
+  navigator.usb.addEventListener('connect', event => {
+    // Add |event.device| to the UI.
+  });
+
+  navigator.usb.addEventListener('disconnect', event => {
+    // Remove |event.device| from the UI.
+  });
+  let button = document.getElementById('but');
+    button.addEventListener('click', async () => {
+    let device;
+    try {
+      device = await navigator.usb.requestDevice({ filters: [{
+        vendorId: 0x2760,
+        classCode: 0x14, // vendor-specific
+        protocolCode: 0x01
+      }]});
+    } catch (err) {
+      // No device was selected.
+    }
+
+    if (device !== undefined) {
+      // Add |device| to the UI.
+    }
+  });
+*/
 }
+
 
 </script>
 <body>
