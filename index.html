@@ -72,6 +72,8 @@ function doit(){
           //classCode: 0x01, // vendor-specific
           //protocolCode: 0x01
       }]});
+      console.log(device.productName);
+      console.log(device.manufacturerName);
     } catch{
       console.log("in doit(). no device found");
     }
