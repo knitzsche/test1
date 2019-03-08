@@ -67,7 +67,8 @@ function doit(){
     try {
       console.log("in try");
       device = await navigator.usb.requestDevice({ filters: [{
-          vendorId: 0x046d
+          vendorId: 1133
+          //vendorId: 0x046d
           //classCode: 0x01, // vendor-specific
           //protocolCode: 0x01
       }]});
