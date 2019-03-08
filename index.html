@@ -21,8 +21,6 @@ function start() {
   d.innerHTML = h;
 }
 
-
-
 function doit(){
 
   //console.log( "doiit clicked");
@@ -46,16 +44,17 @@ function doit(){
       console.log("device found!");
       console.log("product name", device.productName);
       console.log("product manufacturer", device.manufacturerName);
-    }
-  });
-
-
+   } else {
+   
   var devices;
   devices = navigator.usb.getDevices();
   console.log("length devices", devices.length);
   //devices.forEach(device => {
     //console.log("a usb device");
     console.log("device");
+  }
+ });
+
   //});
   // my microscope cam: [16:23:27] USB device added: path=/dev/bus/usb/002/027 vendor=2760 "Vimicro Corp.", product=58113 "3.0M USB2.0 Camera", serial="MI1320_SOC", guid=0c2c8eb3-1fe3-493b-9e02-34e86bc88485
 /*
