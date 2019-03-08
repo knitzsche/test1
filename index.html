@@ -37,10 +37,10 @@ function doit(){
           //protocolCode: 0x01
       }] })
       .then(device => {
-      console.log("device found!");
-      console.log("product name", device.productName);
-      console.log("product manufacturer", device.manufacturerName);
-      })
+        console.log("device found!");
+        console.log("product name", device.productName);
+        console.log("product manufacturer", device.manufacturerName);
+      }).catch(error => { console.log(error); });
       if (device !== undefined) {
         var devices;
         devices = navigator.usb.getDevices();
