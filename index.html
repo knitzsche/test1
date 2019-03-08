@@ -40,7 +40,7 @@ function doit(){
       console.log("product name", device.productName);
       console.log("product manufacturer", device.manufacturerName);
      
-     if (device == undefined) {
+     if (device !== undefined) {
        var devices;
        devices = navigator.usb.getDevices();
        console.log("length devices", devices.length);
