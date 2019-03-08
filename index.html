@@ -65,6 +65,7 @@ function doit(){
   but.addEventListener('click', async () => {
     let device;
     try {
+      console.log("in try");
       device = await navigator.usb.requestDevice({ filters: [{
           vendorId: 0x046d
           //classCode: 0x01, // vendor-specific
