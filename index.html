@@ -45,14 +45,13 @@ function doit(){
       console.log("product name", device.productName);
       console.log("product manufacturer", device.manufacturerName);
    } else {
-   
-  var devices;
-  devices = navigator.usb.getDevices();
-  console.log("length devices", devices.length);
-  //devices.forEach(device => {
-    //console.log("a usb device");
-    console.log("device");
-  }
+     var devices;
+     devices = navigator.usb.getDevices();
+     console.log("length devices", devices.length);
+     //devices.forEach(device => {
+     //console.log("a usb device");
+     console.log("device");
+   }
  });
 
   //});
