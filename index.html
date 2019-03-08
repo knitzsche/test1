@@ -25,7 +25,7 @@ function start() {
 
 function doit(){
 
-  console.log( "doiit clicked");
+  //console.log( "doiit clicked");
   let button = document.getElementById('but');
 
   but.addEventListener('click', async () => {
@@ -38,14 +38,14 @@ function doit(){
           //classCode: 0x01, // vendor-specific
           //protocolCode: 0x01
       }]});
-      console.log("product name", device.productName);
-      console.log("product manufacturer", device.manufacturerName);
     } catch{
-      console.log("in doit(). no device found");
+      console.log("in icatch. no device found");
     }
     
    if (device !== undefined) {
       console.log("device found!");
+      console.log("product name", device.productName);
+      console.log("product manufacturer", device.manufacturerName);
     }
   });
 
