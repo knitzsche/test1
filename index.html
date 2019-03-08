@@ -35,20 +35,21 @@ function doit(){
           //vendorId: 0x046d
           //classCode: 0x01, // vendor-specific
           //protocolCode: 0x01
-      }]});
+      }] })
+      .then(device => {
       console.log("device found!");
       console.log("product name", device.productName);
       console.log("product manufacturer", device.manufacturerName);
-     
-     if (device !== undefined) {
-       var devices;
-       devices = navigator.usb.getDevices();
-       console.log("length devices", devices.length);
-       //devices.forEach(device => {
-       //console.log("a usb device");
-       console.log("device");
-     }
-   } catch{
+      })
+      if (device !== undefined) {
+        var devices;
+        devices = navigator.usb.getDevices();
+        console.log("length devices", devices.length);
+        //devices.forEach(device => {
+        //console.log("a usb device");
+        console.log("device");
+      }
+    } catch{
       console.log("in icatch. no device found");
     }
  });
