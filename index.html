@@ -63,7 +63,7 @@ function doit(){
   let button = document.getElementById('but');
 
   but.addEventListener('click', async () => {
-    let device;
+    var device;
     try {
       console.log("in try");
       device = await navigator.usb.requestDevice({ filters: [{
