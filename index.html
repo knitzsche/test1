@@ -27,8 +27,13 @@ function doit(){
   let button = document.getElementById('but');
 
 
+button.keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#but").click();
+    }
+});
   // Execute a function when the user releases a key on the keyboard
-  button.addEventListener("keyup", function(event) {
+/*  button.addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
       // Cancel the default action, if needed
@@ -37,7 +42,7 @@ function doit(){
       button.click();
     }
   });
-
+*/
   but.addEventListener('click', async () => {
     var device;
     try {
